@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import Section, { SectionHeader } from "@/components/ui/Section";
-import Button from "@/components/ui/Button";
+import PageHero from "@/components/ui/PageHero";
+import CTASection from "@/components/ui/CTASection";
 
 export const metadata: Metadata = {
   title: "About Us | Nox Life, LLC",
@@ -29,15 +30,10 @@ const values = [
 export default function AboutPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 to-primary text-white py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold">About Nox Life</h1>
-          <p className="mt-4 text-xl text-slate-300 max-w-2xl">
-            Dedicated to empowering individuals and businesses to reach their full potential.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="About Nox Life"
+        subtitle="Dedicated to empowering individuals and businesses to reach their full potential."
+      />
 
       {/* Our Story */}
       <Section>
@@ -84,29 +80,18 @@ export default function AboutPage() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value) => (
             <div key={value.title} className="text-center">
-              <h3 className="text-xl font-semibold text-white">
-                {value.title}
-              </h3>
+              <h3 className="text-xl font-semibold text-white">{value.title}</h3>
               <p className="mt-2 text-gray-400">{value.description}</p>
             </div>
           ))}
         </div>
       </Section>
 
-      {/* CTA */}
-      <Section background="dark">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold">Join Our Journey</h2>
-          <p className="mt-4 text-slate-300 max-w-2xl mx-auto">
-            We&apos;re always looking to connect with people who share our values.
-          </p>
-          <div className="mt-8">
-            <Button href="/contact" variant="outline" size="lg">
-              Get in Touch
-            </Button>
-          </div>
-        </div>
-      </Section>
+      <CTASection
+        title="Join Our Journey"
+        subtitle="We're always looking to connect with people who share our values."
+        buttonText="Get in Touch"
+      />
     </>
   );
 }

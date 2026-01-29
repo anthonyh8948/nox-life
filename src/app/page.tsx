@@ -1,24 +1,8 @@
 import Button from "@/components/ui/Button";
 import Section, { SectionHeader } from "@/components/ui/Section";
 import Card, { CardHeader, CardTitle, CardContent } from "@/components/ui/Card";
-
-const services = [
-  {
-    title: "Consulting",
-    description: "Strategic guidance to help you navigate challenges and seize opportunities.",
-    icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
-  },
-  {
-    title: "Strategy",
-    description: "Develop actionable plans that align with your vision and drive measurable results.",
-    icon: "M13 10V3L4 14h7v7l9-11h-7z",
-  },
-  {
-    title: "Support",
-    description: "Ongoing assistance to ensure your continued success and growth.",
-    icon: "M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z",
-  },
-];
+import CTASection from "@/components/ui/CTASection";
+import { serviceHighlights } from "@/data/services";
 
 const stats = [
   { value: "500+", label: "Clients Served" },
@@ -78,7 +62,7 @@ export default function Home() {
           subtitle="We offer comprehensive services designed to help you succeed in today's competitive landscape."
         />
         <div className="grid md:grid-cols-3 gap-8">
-          {services.map((service) => (
+          {serviceHighlights.map((service) => (
             <Card key={service.title} className="text-center hover:shadow-xl transition-shadow">
               <CardHeader>
                 <div className="mx-auto w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-4">
@@ -107,20 +91,11 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* CTA Section */}
-      <Section background="dark">
-        <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-bold">Ready to Get Started?</h2>
-          <p className="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">
-            Contact us today to learn how Nox Life can help you achieve your goals.
-          </p>
-          <div className="mt-8">
-            <Button href="/contact" variant="outline" size="lg">
-              Contact Us
-            </Button>
-          </div>
-        </div>
-      </Section>
+      <CTASection
+        title="Ready to Get Started?"
+        subtitle="Contact us today to learn how Nox Life can help you achieve your goals."
+        buttonText="Contact Us"
+      />
     </>
   );
 }

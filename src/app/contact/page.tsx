@@ -4,6 +4,7 @@ import { useState } from "react";
 import Section from "@/components/ui/Section";
 import Card, { CardContent } from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
+import PageHero from "@/components/ui/PageHero";
 
 const contactInfo = [
   {
@@ -46,15 +47,10 @@ export default function ContactPage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-900 to-primary text-white py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold">Contact Us</h1>
-          <p className="mt-4 text-xl text-slate-300 max-w-2xl">
-            Ready to start your journey? Get in touch with our team today.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        title="Contact Us"
+        subtitle="Ready to start your journey? Get in touch with our team today."
+      />
 
       <Section>
         <div className="grid lg:grid-cols-3 gap-12">

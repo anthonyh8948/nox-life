@@ -2,17 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Team", href: "/team" },
-  { name: "Testimonials", href: "/testimonials" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/contact" },
-];
+import { mainNavigation } from "@/data/navigation";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -31,7 +21,7 @@ export default function Header() {
 
           {/* Desktop navigation */}
           <div className="hidden md:flex md:items-center md:space-x-6">
-            {navigation.map((item) => (
+            {mainNavigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -67,7 +57,7 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-gray-800">
             <div className="flex flex-col space-y-3">
-              {navigation.map((item) => (
+              {mainNavigation.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
